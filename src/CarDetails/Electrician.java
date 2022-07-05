@@ -1,7 +1,7 @@
 package CarDetails;
 
 public class Electrician {
-    private boolean workable=true;
+    private boolean workable;
 
     public Electrician(boolean workable) {
         this.workable = workable;

@@ -15,6 +15,5 @@ public  class Hiance extends Truck {
 
     public void getSpareWheel() {
         System.out.println("Есть запасное колесо диаметром "+spareWheel.getDiameter());
-
     }
 }

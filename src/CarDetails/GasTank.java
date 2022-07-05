@@ -11,5 +11,4 @@ public class GasTank {
     public int getAmount() {
         return amount;
     }
-
 }

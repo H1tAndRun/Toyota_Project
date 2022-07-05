@@ -1,6 +1,5 @@
 package CarDetails;
 
 public enum Transmission {
-    AKPP,MECHANICS,ROBOT;
-
+    AKPP, MECHANICS, ROBOT;
 }
