@@ -1,7 +1,7 @@
-package Car_Brands;
+package car_brands;
 
-import CarDetails.*;
-import TypeCar.Truck;
+import car_details.*;
+import type_car.Truck;
 
 public class Dyna extends Truck {
     private boolean socket;

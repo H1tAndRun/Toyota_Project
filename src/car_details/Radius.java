@@ -1,10 +1,10 @@
-package CarDetails;
+package car_details;
 
 public enum Radius {
-    CAMRY(17),
-    SOLARA(16),
-    HIANCE(20),
-    DYNA(20);
+    R17(17),
+    R16(16),
+    R20H(20),
+    R20D(20);
 
     private int diameter;
 

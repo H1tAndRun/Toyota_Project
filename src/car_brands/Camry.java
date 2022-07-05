@@ -1,7 +1,7 @@
-package Car_Brands;
+package car_brands;
 
-import CarDetails.*;
-import TypeCar.*;
+import car_details.*;
+import type_car.*;
 
 public class Camry extends PassengerCar {
     private boolean usb;

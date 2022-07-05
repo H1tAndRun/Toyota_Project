@@ -1,7 +1,7 @@
-package Car_Brands;
+package car_brands;
 
-import CarDetails.*;
-import TypeCar.Cabriolet;
+import car_details.*;
+import type_car.Cabriolet;
 
 
 public class Solara extends Cabriolet {

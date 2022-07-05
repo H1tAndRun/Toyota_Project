@@ -1,6 +1,6 @@
-package TypeCar;
+package type_car;
 
-import CarDetails.*;
+import car_details.*;
 
 public abstract class Car {
     private String color;
@@ -67,6 +67,10 @@ public abstract class Car {
         lights.setWorkable(true);
         System.out.println("Фары включены");
 
+    }
+
+    public Wheels[] getWheels() {
+        return wheels;
     }
 }
 

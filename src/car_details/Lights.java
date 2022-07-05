@@ -1,4 +1,4 @@
-package CarDetails;
+package car_details;
 
 public class Lights {
     boolean workable;

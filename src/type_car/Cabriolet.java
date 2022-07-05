@@ -1,7 +1,7 @@
-package TypeCar;
+package type_car;
 
 
-import CarDetails.*;
+import car_details.*;
 
 public abstract class Cabriolet extends Car {
     private boolean roof;

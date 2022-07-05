@@ -1,10 +1,10 @@
-package Car_Brands;
+package car_brands;
 
-import CarDetails.*;
-import TypeCar.Truck;
+import car_details.*;
+import type_car.Truck;
 
 public  class Hiance extends Truck {
-   private Wheels spareWheel=new Wheels(false,Radius.HIANCE);
+   private Wheels spareWheel=new Wheels(false,Radius.R20H);
 
     public Hiance(GasTank gasTank, Engine engine, Electrician electrician, Lights lights, Wheels wheels[]) throws Exception {
         super(gasTank, engine, electrician, lights,wheels);

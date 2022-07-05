@@ -1,4 +1,4 @@
-package CarDetails;
+package car_details;
 
 public class Wheels {
     boolean pierced;
@@ -16,4 +16,5 @@ public class Wheels {
     public Radius getRadius() {
         return radius;
     }
+
 }

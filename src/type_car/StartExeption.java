@@ -1,4 +1,4 @@
-package TypeCar;
+package type_car;
 
 public class StartExeption extends Exception {
 

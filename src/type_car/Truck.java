@@ -1,6 +1,6 @@
-package TypeCar;
+package type_car;
 
-import CarDetails.*;
+import car_details.*;
 
 public abstract class Truck extends Car {
     int capacity;
