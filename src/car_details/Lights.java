@@ -1,9 +1,7 @@
 package car_details;
 
-public class Lights {
-    boolean workable;
-
-    public void setWorkable(boolean workable) {
-        this.workable = workable;
+public class Lights extends CarDetailBroken {
+    public Lights(boolean isBroken) {
+        super(isBroken);
     }
 }

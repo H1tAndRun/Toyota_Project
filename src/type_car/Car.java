@@ -9,29 +9,19 @@ public abstract class Car {
     private boolean inMove;
     private double priceCar;
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
-    }
-
-    public void setTransmission(Transmission transmission) {
-        this.transmission = transmission;
-    }
-
-    public void setPriceCar(double priceCar) {
-        this.priceCar = priceCar;
-    }
-
     private GasTank gasTank;
     private Engine engine;
     private Electrician electrician;
     private Lights lights;
     private Wheels wheels[];
 
-    Car(GasTank gasTank, Engine engine, Electrician electrician, Lights lights, Wheels wheels[]) {
+    public Car(String color, int maxSpeed, Transmission transmission, boolean inMove, double priceCar,
+               GasTank gasTank, Engine engine, Electrician electrician, Lights lights, Wheels[] wheels) {
+        this.color = color;
+        this.maxSpeed = maxSpeed;
+        this.transmission = transmission;
+        this.inMove = inMove;
+        this.priceCar = priceCar;
         this.gasTank = gasTank;
         this.engine = engine;
         this.electrician = electrician;
@@ -50,7 +40,7 @@ public abstract class Car {
         } else if (gasTank.getAmount() <= 0) {
             throw new StartExeption("Бензобак пустой");
 
-        } else if (!engine.isWorkable() || !electrician.isWorkable()) {
+        } else if (!engine.isBroken() || !electrician.isBroken()) {
             throw new StartExeption("Движение не возможно не работает электрика или двигатель");
         } else {
             inMove = true;
@@ -64,13 +54,12 @@ public abstract class Car {
     }
 
     public void UseLight() {
-        lights.setWorkable(true);
-        System.out.println("Фары включены");
+        if (lights.isBroken()) {
+            System.out.println("Фары включены");
+        }else {
+            System.out.println("Фары сломаны");
+        }
 
-    }
-
-    public Wheels[] getWheels() {
-        return wheels;
     }
 }
 

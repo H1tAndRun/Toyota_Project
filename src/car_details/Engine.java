@@ -1,14 +1,8 @@
 package car_details;
 
-public class Engine {
+public class Engine extends CarDetailBroken {
 
-    private boolean workable = true;
-
-    public Engine(boolean workable) {
-        this.workable = workable;
-    }
-
-    public boolean isWorkable() {
-        return workable;
+    public Engine(boolean isBroken) {
+        super(isBroken);
     }
 }

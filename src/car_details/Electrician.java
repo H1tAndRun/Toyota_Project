@@ -1,13 +1,8 @@
 package car_details;
 
-public class Electrician {
-    private boolean workable;
+public class Electrician extends CarDetailBroken {
 
-    public Electrician(boolean workable) {
-        this.workable = workable;
-    }
-
-    public boolean isWorkable() {
-        return workable;
+    public Electrician(boolean isBroken) {
+        super(isBroken);
     }
 }
