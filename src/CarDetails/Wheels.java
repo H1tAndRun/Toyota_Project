@@ -1,24 +1,19 @@
 package CarDetails;
 
-public enum Wheels {
-    CAMRY(false, 17),
-    SOLARA(false, 16),
-    HIANCE(false, 20),
-    DYNA(false, 20);
+public class Wheels {
+    boolean pierced;
+    Radius radius;
 
-    private boolean pierced;
-    int diameter;
-
-    Wheels(boolean pierced, int diameter) {
+    public Wheels(boolean pierced, Radius radius) {
         this.pierced = pierced;
-        this.diameter = diameter;
+        this.radius = radius;
     }
 
     public boolean isPierced() {
         return pierced;
     }
 
-    public int getDiameter() {
-        return diameter;
+    public Radius getRadius() {
+        return radius;
     }
 }

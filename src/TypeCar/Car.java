@@ -68,6 +68,6 @@ public abstract class Car {
         System.out.println("Фары включены");
 
     }
-
-
 }
+
+

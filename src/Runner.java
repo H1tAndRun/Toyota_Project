@@ -1,7 +1,11 @@
 import CarDetails.*;
+import Car_Brands.Camry;
+import Car_Brands.Dyna;
+import Car_Brands.Hiance;
+import Car_Brands.Solara;
 
 public class Runner {
-    Wheels wheels[] = new Wheels[4];
+    Wheels[] wheels = new Wheels[4];
 
     public static void main(String[] args) throws Exception {
         Runner runner = new Runner();
@@ -16,9 +20,10 @@ public class Runner {
 
     public Camry CreateCamry() throws Exception {
         for (int i = 0; i < wheels.length; i++) {
-            wheels[i] = Wheels.CAMRY;
+            wheels[i]=new Wheels(false,Radius.CAMRY);
         }
-        Camry camry = new Camry(new GasTank(5), new Engine(true), new Electrician(true), new Lights(), wheels);
+
+        Camry camry = new Camry(new GasTank(5), new Engine(true), new Electrician(true), new Lights(),wheels);
         camry.setColor("Белый");
         camry.setMaxSpeed(250);
         camry.setPriceCar(1_000_000);
@@ -33,7 +38,7 @@ public class Runner {
 
     public Dyna CreateDyna() throws Exception {
         for (int i = 0; i < wheels.length; i++) {
-            wheels[i] = Wheels.DYNA;
+            wheels[i]=new Wheels(false,Radius.DYNA);
         }
         Dyna dyna = new Dyna(new GasTank(15), new Engine(true), new Electrician(true), new Lights(), wheels);
         dyna.setColor("Черный");
@@ -50,8 +55,9 @@ public class Runner {
 
     public Solara CreateSolara() throws Exception {
         for (int i = 0; i < wheels.length; i++) {
-            wheels[i] = Wheels.SOLARA;
+            wheels[i]=new Wheels(false,Radius.SOLARA);
         }
+
         Solara solara = new Solara(new GasTank(15), new Engine(true), new Electrician(true), new Lights(), wheels);
         solara.setColor("Синий");
         solara.setMaxSpeed(250);
@@ -68,7 +74,7 @@ public class Runner {
 
     public Hiance CreateHiance() throws Exception {
         for (int i = 0; i < wheels.length; i++) {
-            wheels[i] = Wheels.HIANCE;
+            wheels[i]=new Wheels(false,Radius.HIANCE);
         }
         Hiance hiance = new Hiance(new GasTank(15), new Engine(true), new Electrician(true), new Lights(), wheels);
         hiance.setColor("Красный");
@@ -82,6 +88,8 @@ public class Runner {
         hiance.getSpareWheel();
         return hiance;
     }
+
+
 
 
 }

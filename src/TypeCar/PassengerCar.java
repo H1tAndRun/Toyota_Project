@@ -14,7 +14,7 @@ public abstract class PassengerCar extends Car {
         }
     }
 
-    protected PassengerCar(GasTank gasTank, Engine engine, Electrician electrician, Lights lights, Wheels wheels[]) {
+    protected PassengerCar(GasTank gasTank, Engine engine, Electrician electrician, Lights lights, Wheels[] wheels) {
         super(gasTank, engine, electrician, lights, wheels);
     }
 }
