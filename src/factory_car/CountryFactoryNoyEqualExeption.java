@@ -1,4 +1,4 @@
-package factory;
+package factory_car;
 
 public class CountryFactoryNoyEqualExeption extends Exception{
 

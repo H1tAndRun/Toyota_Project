@@ -1,6 +1,9 @@
 package type_car;
 
 import car_details.*;
+import factory_car.Country;
+
+import java.util.Arrays;
 
 public abstract class Car {
     private String color;
@@ -14,9 +17,10 @@ public abstract class Car {
     private Electrician electrician;
     private Lights lights;
     private Wheels wheels[];
+    private Country country;
 
     public Car(String color, int maxSpeed, Transmission transmission, boolean inMove, double priceCar,
-               GasTank gasTank, Engine engine, Electrician electrician, Lights lights, Wheels[] wheels) {
+               GasTank gasTank, Engine engine, Electrician electrician, Lights lights, Wheels[] wheels,Country country) {
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.transmission = transmission;
@@ -27,6 +31,7 @@ public abstract class Car {
         this.electrician = electrician;
         this.lights = lights;
         this.wheels = wheels;
+        this.country=country;
     }
 
     public void StartMoving() throws StartExeption {
@@ -60,6 +65,23 @@ public abstract class Car {
             System.out.println("Фары сломаны");
         }
 
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "color='" + color + '\'' +
+                ", maxSpeed=" + maxSpeed +
+                ", transmission=" + transmission +
+                ", inMove=" + inMove +
+                ", priceCar=" + priceCar +
+                ", gasTank=" + gasTank +
+                ", engine=" + engine +
+                ", electrician=" + electrician +
+                ", lights=" + lights +
+                ", wheels=" + Arrays.toString(wheels) +
+                ", country=" + country +
+                '}';
     }
 }
 

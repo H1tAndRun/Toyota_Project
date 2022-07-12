@@ -1,4 +1,4 @@
-package factory;
+package factory_car;
 
 import car_details.*;
 
