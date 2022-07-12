@@ -9,29 +9,29 @@ public class ManufacturingFactory {
         this.country = country;
     }
 
-    protected GasTank CreateGasTnk(int count){
+    public GasTank сreateGasTnk(int count){
         return new GasTank(count);
     }
 
-    protected Engine CreateEngine(){
+    public Engine сreateEngine(){
         return new Engine(false);
     }
-    protected Lights CreateLights(){
+    public Lights сreateLights(){
         return new Lights(false);
     }
-    protected Electrician CreateElectrican(){
+    public Electrician сreateElectrican(){
         return new Electrician(false);
     }
-    protected MiniFridge CreateMiniFridge(){
+    public MiniFridge CreateMiniFridge(){
         return new MiniFridge();
     }
-   protected Socket CreateSocket(){
+    public Socket сreateSocket(){
         return new Socket();
     }
-    protected Usb CreateUsb(){
+    public Usb сreateUsb(){
         return new Usb();
     }
-    protected Wheels[] CreateWheels(boolean isBroken,Radius radius){
+    public Wheels[] сreateWheels(boolean isBroken,Radius radius){
         Wheels[]wheels=new Wheels[4];
         for (int i = 0; i < wheels.length; i++) {
             wheels[i]=new Wheels(false,radius);
@@ -39,7 +39,7 @@ public class ManufacturingFactory {
         return wheels;
     }
 
-    protected Country getCountry() {
+    public Country getCountry() {
         return country;
     }
 }

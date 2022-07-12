@@ -26,24 +26,24 @@ public class AssemblyLine {
         return manufacturingFactory;
     }
     public Camry createCamry(String color,double price) throws Exception {
-        return new Camry(color,200, Transmission.AKPP,false,price,manufacturingFactory.CreateGasTnk(5),
-                manufacturingFactory.CreateEngine(),manufacturingFactory.CreateElectrican(),manufacturingFactory.CreateLights(),
-                manufacturingFactory.CreateWheels(false, Radius.R17),false, manufacturingFactory.CreateUsb());
+        return new Camry(color,200, Transmission.AKPP,false,price,manufacturingFactory.сreateGasTnk(5),
+                manufacturingFactory.сreateEngine(),manufacturingFactory.сreateElectrican(),manufacturingFactory.сreateLights(),
+                manufacturingFactory.сreateWheels(false, Radius.R17),false, manufacturingFactory.сreateUsb());
     }
     public Solara createSolara(String color, double price) throws Exception {
-        return new Solara(color,150,Transmission.ROBOT,false,price,manufacturingFactory.CreateGasTnk(20),
-                manufacturingFactory.CreateEngine(),manufacturingFactory.CreateElectrican(),manufacturingFactory.CreateLights(),
-                manufacturingFactory.CreateWheels(false,Radius.R16),true,new MiniFridge());
+        return new Solara(color,150,Transmission.ROBOT,false,price,manufacturingFactory.сreateGasTnk(20),
+                manufacturingFactory.сreateEngine(),manufacturingFactory.сreateElectrican(),manufacturingFactory.сreateLights(),
+                manufacturingFactory.сreateWheels(false,Radius.R16),true,new MiniFridge());
     }
     public Dyna createDyna(String color, double price) throws Exception {
-        return new Dyna(color,100,Transmission.MECHANICS,false,price,manufacturingFactory.CreateGasTnk(10),
-                manufacturingFactory.CreateEngine(),manufacturingFactory.CreateElectrican(),manufacturingFactory.CreateLights(),
-                manufacturingFactory.CreateWheels(false,Radius.R20D),400, manufacturingFactory.CreateSocket());
+        return new Dyna(color,100,Transmission.MECHANICS,false,price,manufacturingFactory.сreateGasTnk(10),
+                manufacturingFactory.сreateEngine(),manufacturingFactory.сreateElectrican(),manufacturingFactory.сreateLights(),
+                manufacturingFactory.сreateWheels(false,Radius.R20D),400, manufacturingFactory.сreateSocket());
     }
     public Hiance createHiance(String color,double price) throws Exception{
-        return new Hiance(color,110,Transmission.MECHANICS,false,price,manufacturingFactory.CreateGasTnk(2),
-                manufacturingFactory.CreateEngine(),manufacturingFactory.CreateElectrican(),manufacturingFactory.CreateLights(),
-                manufacturingFactory.CreateWheels(false,Radius.R20H),370,new Wheels(false,Radius.R20H));
+        return new Hiance(color,110,Transmission.MECHANICS,false,price,manufacturingFactory.сreateGasTnk(2),
+                manufacturingFactory.сreateEngine(),manufacturingFactory.сreateElectrican(),manufacturingFactory.сreateLights(),
+                manufacturingFactory.сreateWheels(false,Radius.R20H),370,new Wheels(false,Radius.R20H));
     }
 }
 
