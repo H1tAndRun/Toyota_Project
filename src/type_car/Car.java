@@ -40,7 +40,7 @@ public abstract class Car {
         } else if (gasTank.getAmount() <= 0) {
             throw new StartExeption("Бензобак пустой");
 
-        } else if (!engine.isBroken() || !electrician.isBroken()) {
+        } else if (engine.isBroken() || electrician.isBroken()) {
             throw new StartExeption("Движение не возможно не работает электрика или двигатель");
         } else {
             inMove = true;
@@ -54,7 +54,7 @@ public abstract class Car {
     }
 
     public void UseLight() {
-        if (lights.isBroken()) {
+        if (!lights.isBroken()) {
             System.out.println("Фары включены");
         }else {
             System.out.println("Фары сломаны");

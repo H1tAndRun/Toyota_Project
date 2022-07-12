@@ -1,16 +1,16 @@
 package car_details;
 
 public class Wheels {
-    boolean pierced;
+    boolean isBroken;
     Radius radius;
 
     public Wheels(boolean pierced, Radius radius) {
-        this.pierced = pierced;
+        this.isBroken = pierced;
         this.radius = radius;
     }
 
     public boolean isPierced() {
-        return pierced;
+        return isBroken;
     }
 
     public Radius getRadius() {
