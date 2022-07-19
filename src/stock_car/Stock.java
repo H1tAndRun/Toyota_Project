@@ -19,13 +19,13 @@ public class Stock {
     private Hiance[] hianceArr = new Hiance[10];
 
     public void addCarCamry(Camry camry) {
-        if (countCamry >= camryArr.length){
-            camryArr= Arrays.copyOf(camryArr,(int) (camryArr.length*1.5));
-            camryArr[countCamry]=camry;
+        if (countCamry >= camryArr.length) {
+            camryArr = Arrays.copyOf(camryArr, (int) (camryArr.length * 1.5));
+            camryArr[countCamry] = camry;
             countCamry++;
             countCar++;
             maxCountCar--;
-        }else {
+        } else {
             camryArr[countCamry] = camry;
             countCamry++;
             countCar++;
@@ -34,13 +34,13 @@ public class Stock {
     }
 
     public void addCarSolara(Solara solara) {
-        if (countSolara >= solaraArr.length){
-            solaraArr= Arrays.copyOf(solaraArr,(int) (solaraArr.length*1.5));
-            solaraArr[countSolara]=solara;
+        if (countSolara >= solaraArr.length) {
+            solaraArr = Arrays.copyOf(solaraArr, (int) (solaraArr.length * 1.5));
+            solaraArr[countSolara] = solara;
             countSolara++;
             countCar++;
             maxCountCar--;
-        }else {
+        } else {
             solaraArr[countSolara] = solara;
             countSolara++;
             countCar++;
@@ -48,14 +48,14 @@ public class Stock {
         }
     }
 
-    void addCarHiance(Hiance hiance) {
-        if (countHiance >= hianceArr.length){
-            hianceArr= Arrays.copyOf(hianceArr,(int) (hianceArr.length*1.5));
-            hianceArr[countHiance]=hiance;
+    public void addCarHiance(Hiance hiance) {
+        if (countHiance >= hianceArr.length) {
+            hianceArr = Arrays.copyOf(hianceArr, (int) (hianceArr.length * 1.5));
+            hianceArr[countHiance] = hiance;
             countHiance++;
             countCar++;
             maxCountCar--;
-        }else {
+        } else {
             hianceArr[countHiance] = hiance;
             countHiance++;
             countCar++;
@@ -63,14 +63,14 @@ public class Stock {
         }
     }
 
-    void addCarDyna(Dyna dyna) {
-        if (countDyna >= dynaArr.length){
-            dynaArr= Arrays.copyOf(dynaArr,(int) (dynaArr.length*1.5));
-            dynaArr[countDyna]=dyna;
+    public void addCarDyna(Dyna dyna) {
+        if (countDyna >= dynaArr.length) {
+            dynaArr = Arrays.copyOf(dynaArr, (int) (dynaArr.length * 1.5));
+            dynaArr[countDyna] = dyna;
             countDyna++;
             countCar++;
             maxCountCar--;
-        }else {
+        } else {
             dynaArr[countDyna] = dyna;
             countDyna++;
             countCar++;
@@ -78,66 +78,69 @@ public class Stock {
         }
     }
 
-    public Camry getCamry(){
-        Camry getCamry=camryArr[countCamry-1];
+    public Camry getCamry() {
+        Camry getCamry = camryArr[countCamry - 1];
         countCamry--;
         maxCountCar++;
         countCar--;
-        camryArr=Arrays.copyOf(camryArr,countCamry);
+        camryArr = Arrays.copyOf(camryArr, countCamry);
         return getCamry;
     }
-    public Solara getSolara(){
-        Solara getSolara=solaraArr[countSolara-1];
+
+    public Solara getSolara() {
+        Solara getSolara = solaraArr[countSolara - 1];
         countSolara--;
         maxCountCar++;
         countCar--;
-        solaraArr=Arrays.copyOf(solaraArr,countSolara);
+        solaraArr = Arrays.copyOf(solaraArr, countSolara);
         return getSolara;
     }
-    public Hiance getHiance(){
-        Hiance getHiance=hianceArr[countHiance-1];
+
+    public Hiance getHiance() {
+        Hiance getHiance = hianceArr[countHiance - 1];
         countHiance--;
         maxCountCar++;
         countCar--;
-        hianceArr=Arrays.copyOf(hianceArr,countHiance);
+        hianceArr = Arrays.copyOf(hianceArr, countHiance);
         return getHiance;
     }
-    public Dyna getDyna(){
-        Dyna getDyna=dynaArr[countDyna-1];
+
+    public Dyna getDyna() {
+        Dyna getDyna = dynaArr[countDyna - 1];
         countDyna--;
         maxCountCar++;
         countCar--;
-        dynaArr=Arrays.copyOf(dynaArr,countDyna);
+        dynaArr = Arrays.copyOf(dynaArr, countDyna);
         return getDyna;
     }
 
     public int getCountCar() {
-        System.out.println("Общее колличество машин на скаледе "+countCar);
+        //System.out.println("Общее колличество машин на скаледе " + countCar);
         return countCar;
     }
 
     public int getMaxCountCar() {
-        System.out.println("Склад может вместить еще "+maxCountCar+" машин");
+       // System.out.println("Склад может вместить еще " + maxCountCar + " машин");
         return maxCountCar;
     }
 
     public int getCountCamry() {
-        System.out.println("На складе "+countCamry+" машин Camry");
+       // System.out.println("На складе " + countCamry + " машин Camry");
         return countCamry;
     }
 
     public int getCountSolara() {
-        System.out.println("На складе "+countSolara+" машин Solara");
+       // System.out.println("На складе " + countSolara + " машин Solara");
         return countSolara;
     }
 
     public int getCountHiance() {
-        System.out.println("На складе "+countHiance+" машин Hiance");
+      //  System.out.println("На складе " + countHiance + " машин Hiance");
         return countHiance;
     }
 
     public int getCountDyna() {
-        System.out.println("На складе "+countDyna+" машин Dyna");
+       // System.out.println("На складе " + countDyna + " машин Dyna");
         return countDyna;
     }
 
@@ -156,4 +159,45 @@ public class Stock {
     public Hiance[] getHianceArr() {
         return hianceArr;
     }
+
+    public void setCountCar(int countCar) {
+        this.countCar = countCar;
+    }
+
+    public void setMaxCountCar(int maxCountCar) {
+        this.maxCountCar = maxCountCar;
+    }
+
+    public void setCountDyna(int countDyna) {
+        this.countDyna = countDyna;
+    }
+
+    public void setCountHiance(int countHiance) {
+        this.countHiance = countHiance;
+    }
+
+    public void setCountCamry(int countCamry) {
+        this.countCamry = countCamry;
+    }
+
+    public void setCountSolara(int countSolara) {
+        this.countSolara = countSolara;
+    }
+
+    public void setCamryArr(Camry[] camryArr) {
+        this.camryArr = camryArr;
+    }
+
+    public void setSolaraArr(Solara[] solaraArr) {
+        this.solaraArr = solaraArr;
+    }
+
+    public void setDynaArr(Dyna[] dynaArr) {
+        this.dynaArr = dynaArr;
+    }
+
+    public void setHianceArr(Hiance[] hianceArr) {
+        this.hianceArr = hianceArr;
+    }
 }
+

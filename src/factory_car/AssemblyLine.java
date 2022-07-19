@@ -23,12 +23,13 @@ public class AssemblyLine {
     }
 
     public ManufacturingFactory getManufacturingFactory() {
+
         return manufacturingFactory;
     }
     public Camry createCamry(String color,double price) throws Exception {
         return new Camry(color,200, Transmission.AKPP,false,price,manufacturingFactory.сreateGasTnk(5),
                 manufacturingFactory.сreateEngine(),manufacturingFactory.сreateElectrican(),manufacturingFactory.сreateLights(),
-                manufacturingFactory.сreateWheels(false, Radius.R17),false, manufacturingFactory.сreateUsb(),Country.RUSSIAN);
+                manufacturingFactory.сreateWheels(false, Radius.R17),false, manufacturingFactory.сreateUsb(),Country.JAPAN);
     }
     public Solara createSolara(String color, double price) throws Exception {
         return new Solara(color,150,Transmission.ROBOT,false,price,manufacturingFactory.сreateGasTnk(20),

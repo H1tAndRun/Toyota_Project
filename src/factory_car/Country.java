@@ -1,5 +1,5 @@
 package factory_car;
 
 public enum Country {
-    RUSSIAN,USA,GERMANY,FRANCE;
+    RUSSIAN,USA,GERMANY,FRANCE,JAPAN;
 }

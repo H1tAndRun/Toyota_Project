@@ -83,6 +83,10 @@ public abstract class Car {
                 ", country=" + country +
                 '}';
     }
+
+    public double getPriceCar() {
+        return priceCar;
+    }
 }
 
 
