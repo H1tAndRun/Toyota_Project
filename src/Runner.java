@@ -9,8 +9,12 @@ import factory_car.AssemblyLine;
 import factory_car.ManufacturingFactory;
 import people.CashIer;
 import people.Manager;
+import sales.Boss;
 import stock_car.Stock;
 import type_car.Car;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static factory_car.Country.*;
 
@@ -31,23 +35,21 @@ public class Runner {
         stock.addCarCamry(camry3);
         stock.addCarCamry(camry4);
 
-        Manager manager =new Manager(stock,assemblyLine);
+        Manager manager =new Manager("Pavel",stock,assemblyLine);
+        Manager manager1=new Manager("Roman",stock,assemblyLine);
+        Manager manager2=new Manager("Ivan",stock,assemblyLine);
 
         Buyer buyer1=new Buyer(10000,"Jon");
-        Car car1= manager.sellACar(buyer1);
-        CashIer.addToSum(car1);
+        manager1.sellACar(buyer1);
 
         Buyer buyer2=new Buyer(12000,"Denis");
-        Car car2= manager.sellACar(buyer2);
-        CashIer.addToSum(car2);
+        manager1.sellACar(buyer2);
 
         Buyer buyer3=new Buyer(15000,"Petr");
-        Car car3= manager.sellACar(buyer3);
-        CashIer.addToSum(car3);
+        manager2.sellACar(buyer3);
 
         Buyer buyer4 =new Buyer(22000,"Ivan");
-        Car car4= manager.sellACar(buyer4);
-        CashIer.addToSum(car4);
+        manager2.sellACar(buyer4);
 
         Buyer buyer5=new Buyer(11000,"Pasha");
         Car car5=manager.sellACar(buyer5);
@@ -65,7 +67,15 @@ public class Runner {
         Car car8=manager.sellACar(buyer8);
         CashIer.addToSum(car8);
 
-        CashIer.getToSum();
+        //передаем в босса лист менеджеров
+        ArrayList<Manager>arrayList=new ArrayList<>();
+        arrayList.add(manager);
+        arrayList.add(manager1);
+        arrayList.add(manager2);
+        Boss boss =new Boss(arrayList);
+
+
+
 
 
 

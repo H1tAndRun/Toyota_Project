@@ -2,6 +2,7 @@ package car_model;
 
 import car_details.*;
 import factory_car.Country;
+import sales.Directory;
 import type_car.*;
 
 public class Camry extends PassengerCar {
@@ -11,7 +12,7 @@ public class Camry extends PassengerCar {
                  Engine engine, Electrician electrician, Lights lights, Wheels[] wheels, boolean cruiseControl,
                  Usb usb, Country country) throws Exception {
         super(color, maxSpeed, transmission, inMove, priceCar, gasTank,
-                engine, electrician, lights, wheels, cruiseControl,country);
+                engine, electrician, lights, wheels, cruiseControl,country,Directory.CAMRY);
         this.usb = usb;
         for ( Wheels value : wheels) {
             if (value.getRadius().getDiameter()!=17) {

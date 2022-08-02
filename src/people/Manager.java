@@ -1,22 +1,36 @@
 package people;
 
+
 import car_model.Camry;
 import car_model.Dyna;
 import car_model.Hiance;
 import car_model.Solara;
 import factory_car.AssemblyLine;
+import sales.Directory;
+import sales.Report;
 import stock_car.Stock;
 import type_car.Car;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 
 public class Manager {
-    Stock stock;
-    AssemblyLine assemblyLine;
+   private String name;
+   private Stock stock;
+   private AssemblyLine assemblyLine;
+   private Report report;
 
-    public Manager(Stock stock, AssemblyLine assemblyLine) {
+    public Manager(String name,Stock stock, AssemblyLine assemblyLine) {
         this.stock = stock;
         this.assemblyLine = assemblyLine;
+        this.name=name;
+        report=new Report(name);
+    }
+
+    public Report getReport() {
+        return report;
     }
 
     public Car sellACar(Buyer buyer) throws Exception {
@@ -143,12 +157,27 @@ public class Manager {
         }
 
         if (maxPriceCar==null){
-            System.out.println("К сожалению у вас не хватает денег +\n");
+            System.out.println("К сожалению у вас не хватает денег \n");
             return null;
         }
         buyer.setMaxMoney(buyer.getMaxMoney()-maxPriceCar.getPriceCar());
         System.out.println("Покупателю "+buyer.getName()+" cоветую приобрести машину "+maxPriceCar.getClass() + " за "+maxPriceCar.getPriceCar()+"\n");
+        report.addCar(maxPriceCar);
         return maxPriceCar;
     }
 
+    public void generateReport() throws IOException {
+        FileWriter fileWriter=new FileWriter("D:\\Projekt JAVA\\Toyota_Project\\src\\sales\\report\\report_"+name);
+        fileWriter.write(name+"\n");
+        double income=0.0;
+        double consumption=0.0;
+        for (int i = 0; i < report.getSalesList().size(); i++) {
+            Car car=report.getSalesList().get(i);
+            fileWriter.write(car.getName()+"-"+car.getPriceCar()+"-"+car.getName().getCostPrice()+"\n");
+            income+= car.getPriceCar();
+            consumption+=car.getName().getCostPrice();
+        }
+        fileWriter.write("Итог:"+"доходы-"+income+","+"расходы-"+consumption+","+"прибыль-"+(income-consumption));
+        fileWriter.close();
+    }
 }

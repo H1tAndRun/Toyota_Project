@@ -2,10 +2,12 @@ package type_car;
 
 import car_details.*;
 import factory_car.Country;
+import sales.Directory;
 
 import java.util.Arrays;
 
 public abstract class Car {
+    private Directory name;
     private String color;
     private int maxSpeed;
     private Transmission transmission;
@@ -20,7 +22,7 @@ public abstract class Car {
     private Country country;
 
     public Car(String color, int maxSpeed, Transmission transmission, boolean inMove, double priceCar,
-               GasTank gasTank, Engine engine, Electrician electrician, Lights lights, Wheels[] wheels,Country country) {
+               GasTank gasTank, Engine engine, Electrician electrician, Lights lights, Wheels[] wheels,Country country,Directory name) {
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.transmission = transmission;
@@ -32,6 +34,7 @@ public abstract class Car {
         this.lights = lights;
         this.wheels = wheels;
         this.country=country;
+        this.name=name;
     }
 
     public void StartMoving() throws StartExeption {
@@ -82,6 +85,10 @@ public abstract class Car {
                 ", wheels=" + Arrays.toString(wheels) +
                 ", country=" + country +
                 '}';
+    }
+
+    public Directory getName() {
+        return name;
     }
 
     public double getPriceCar() {
